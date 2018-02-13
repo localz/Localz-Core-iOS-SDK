@@ -1,0 +1,2 @@
+# Localz Core iOS SDK
+
