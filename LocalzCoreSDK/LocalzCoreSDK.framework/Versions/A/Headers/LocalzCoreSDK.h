@@ -10,8 +10,6 @@
  */
 
 @import UIKit;
-@import CoreLocation;
-@import CoreBluetooth;
 
 #import <Foundation/Foundation.h>
 #import "LocalzCoreErrorType.h"
@@ -48,6 +46,8 @@
  *  @return The Localz's device ID assigned to this device
  */
 - (nullable NSString *)deviceId;
+
++ (void) updateJWTToken:(NSString *)jwtToken;
 
 /**
  *  Associates the current device with a custom identity. Note that if the app is reinstalled, deviceId will need to be re-associated with the identity.

@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
+typedef enum {
+    CoreHttpSessionAuthNone = 1,
+    CoreHttpSessionAuthBasic,
+    CoreHttpSessionAuthOAuth2
+} CoreHttpSessionAuthType;
+
+
 @protocol LocalzCoreHttpSessionManagerDelegate<NSObject>
 - (void) networkConnectionChanged:(BOOL) isConnected;
 @optional
@@ -25,13 +32,13 @@
 
 - (void) setTimeoutInterval:(NSTimeInterval) timeInterval;
 
-- (NSURLSessionDataTask *)securePOST:(NSString *)URLString deviceId:(NSString *)deviceId parameters:(id)parameters success:(void (^)(NSURLSessionDataTask *task, id responseObject))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+- (NSURLSessionDataTask *)securePOST:(NSString *)URLString deviceId:(NSString *)deviceId auth:(CoreHttpSessionAuthType)authType parameters:(id)parameters success:(void (^)(NSURLSessionDataTask *task, id responseObject))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 - (NSURLSessionDataTask *)apiPOST:(NSString *)URLString parameters:(id)parameters success:(void (^)(NSURLSessionDataTask *task, id responseObject))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
-- (NSURLSessionDataTask *)securePUT:(NSString *)URLString deviceId:(NSString *)deviceId parameters:(id)parameters success:(void (^)(NSURLSessionDataTask *task, id responseObject))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+- (NSURLSessionDataTask *)securePUT:(NSString *)URLString deviceId:(NSString *)deviceId auth:(CoreHttpSessionAuthType)authType parameters:(id)parameters success:(void (^)(NSURLSessionDataTask *task, id responseObject))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 - (NSURLSessionDataTask *)apiPUT:(NSString *)URLString parameters:(id)parameters success:(void (^)(NSURLSessionDataTask *task, id responseObject))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
-- (NSURLSessionDataTask *)secureGET:(NSString *)URLString deviceId:(NSString *)deviceId parameters:(id)parameters success:(void (^)(NSURLSessionDataTask *task, id responseObject))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+- (NSURLSessionDataTask *)secureGET:(NSString *)URLString deviceId:(NSString *)deviceId auth:(CoreHttpSessionAuthType)authType parameters:(id)parameters success:(void (^)(NSURLSessionDataTask *task, id responseObject))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 - (NSURLSessionDataTask *)apiGET:(NSString *)URLString parameters:(id)parameters success:(void (^)(NSURLSessionDataTask *task, id responseObject))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
-- (NSURLSessionDataTask *)secureDELETE:(NSString *)URLString deviceId:(NSString *)deviceId parameters:(id)parameters success:(void (^)(NSURLSessionDataTask *task, id responseObject))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+- (NSURLSessionDataTask *)secureDELETE:(NSString *)URLString deviceId:(NSString *)deviceId auth:(CoreHttpSessionAuthType)authType parameters:(id)parameters success:(void (^)(NSURLSessionDataTask *task, id responseObject))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 - (NSURLSessionDataTask *)apiDELETE:(NSString *)URLString parameters:(id)parameters success:(void (^)(NSURLSessionDataTask *task, id responseObject))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
 @end
