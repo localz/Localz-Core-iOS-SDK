@@ -10,14 +10,6 @@
 #define LocalzCoreErrorType_h
 
 typedef enum {
-//    EInvalidParameter  = 1, /* Invalid parameter */
-//    EInvalidResponseFromServer, /* Response received from server is invalid */
-//    EUnknownError, /* Unknown error */
-//    ENotFound, /* 404 error */
-//    ENotAuthorised, /* Not authorised error */
-//    EUserCancelled, /* User cancelled action */
-//    ENoProjectsAvailable, /* No projects available */
-//    ENoConnection, /* No connection */
     ECoreInvalidParameter  = 1, /* Invalid parameter */
     ECoreInvalidResponseFromServer, /* Response received from server is invalid */
     ECoreUnknownError, /* Unknown error */
@@ -33,7 +25,7 @@ typedef enum {
     ECoreNoProjectsAvailable, /* No projects available */
     ECoreNoSitesAvailable, /* No sites available */
     ECoreNoConnection, /* No connection */
-    ECoreLocationFailed /* Failed obtaining location */
+    ECoreLocationFailed, /* Failed obtaining location */
 } LocalzCoreErrorType;
 
 #endif /* CoreErrorType_h */

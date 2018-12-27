@@ -15,6 +15,7 @@
 #import "LocalzCoreErrorType.h"
 #import "LocalzCoreProtocol.h"
 #import "LocalzCoreConstant.h"
+#import "LocalzCoreError.h"
 
 @class LocalzCoreSDK;
 
@@ -47,7 +48,13 @@
  */
 - (nullable NSString *)deviceId;
 
-+ (void) updateJWTToken:(NSString *)jwtToken;
+/**
+ *  Sets Core SDK with the required JWT token.
+ *
+ *  @param jwtToken jwtToken provided by Localz
+ *  @param refreshToken refreshToken provided by Localz to refresh JWT when expired
+ */
+- (void) setJWT:(NSString *)jwtToken refreshToken:(NSString *)refreshToken;
 
 /**
  *  Associates the current device with a custom identity. Note that if the app is reinstalled, deviceId will need to be re-associated with the identity.
@@ -63,6 +70,16 @@
  *  @param completion A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the error object describing the error that occurred.
  */
 - (void) removeIdentityWithCompletion:(void(^ _Nullable)(NSError * _Nullable error))completion;
+
+/**
+ *  Reset all data on the SDK. You will need to initialise the SDK again before use after calling this.
+ */
+- (void) resetSDK;
+
+/**
+ *  Sets the JWT token and refresh token to Null
+ */
+- (void) logoutDevice;
 
 @end
 

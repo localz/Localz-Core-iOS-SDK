@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "LocalzCoreErrorType.h"
 
-#define CoreErrorDomain @"CoreSDKDomain"
+#define LocalzCoreErrorDomain @"LocalzCoreSDKDomain"
 
 @interface LocalzCoreError : NSError
 + (NSError *)errorWithCode:(LocalzCoreErrorType)code userInfo:(NSDictionary *)userInfo;

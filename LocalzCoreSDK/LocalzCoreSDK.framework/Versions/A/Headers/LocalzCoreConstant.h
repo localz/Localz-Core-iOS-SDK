@@ -18,3 +18,14 @@ extern NSString * const CoreInitNotification;
  *  The new status is available in userInfo["enabled"] with value 1 or 0
  */
 extern NSString * const CoreNetworkReachabilityStateChangeNotification;
+
+/**
+ *  Notification once logs are uploaded to Papertrail
+ *  The error, if any is available in userInfo["error"]
+ */
+extern NSString * const DebugLogsNotification;
+
+/**
+ *  Notification of when the SDK receives a 401 error likely due to tokens expiring.
+ */
+extern NSString * const SpotzUnexpectedLogoutNotification;
