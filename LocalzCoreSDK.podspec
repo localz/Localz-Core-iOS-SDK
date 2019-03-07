@@ -23,4 +23,5 @@ Pod::Spec.new do |s|
 	s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)' }
 	s.frameworks = 'SystemConfiguration','Foundation'
 	s.vendored_frameworks = 'LocalzCoreSDK/LocalzCoreSDK.framework'
+	s.dependency 'TrustKit'
 end
