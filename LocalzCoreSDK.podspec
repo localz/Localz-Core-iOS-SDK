@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 	s.name = 'LocalzCoreSDK'
 	s.summary = 'LocalzCoreSDK'
 
-	s.version = '0.1.5'
+	s.version = '0.1.6'
 	s.platform = :ios,'8.0'
 	s.ios.deployment_target = '8.0'
 	
@@ -15,8 +15,7 @@ Pod::Spec.new do |s|
 			LICENSE
 	}
 	s.author = { 'Localz Pty Ltd' => 'info@localz.com' }
-	s.source = { :git => 'https://github.com/localz/Localz-Core-iOS-SDK.git',
-				 :branch => 'Integration' }
+	s.source = { :git => 'https://github.com/localz/Localz-Core-iOS-SDK.git' }
 	
 	s.requires_arc = true
 	s.preserve_paths = 'LocalzCoreSDK.framework'
