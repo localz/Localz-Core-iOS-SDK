@@ -17,8 +17,9 @@ typedef enum {
 
 
 @protocol LocalzCoreHttpSessionManagerDelegate <NSObject>
-- (void) networkConnectionChanged:(BOOL) isConnected;
 @optional
+- (void) networkConnectionChanged:(BOOL) isConnected;
+- (void) updatedJwt:(NSString *)jwt refreshToken:(NSString *)refreshToken;
 - (NSDictionary *) additionalHeader;
 - (NSDictionary *) additionalSecureHeader;
 @end
@@ -31,6 +32,7 @@ typedef enum {
 - (LocalzCoreHttpSessionManager *) initWithBaseURL:(NSURL *)url projectId:(NSString *)projectId projectKey:(NSString *)projectKey;
 
 - (void) setTimeoutInterval:(NSTimeInterval) timeInterval;
+- (void) setJwt:(NSString *)jwt refreshToken:(NSString *)refreshToken;
 
 - (NSURLSessionDataTask *)secureApiPOST:(NSString *)URLString deviceId:(NSString *)deviceId auth:(LocalzCoreHttpSessionAuthType)authType parameters:(id)parameters success:(void (^)(NSURLSessionDataTask *task, id responseObject))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 - (NSURLSessionDataTask *)apiPOST:(NSString *)URLString parameters:(id)parameters success:(void (^)(NSURLSessionDataTask *task, id responseObject))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;

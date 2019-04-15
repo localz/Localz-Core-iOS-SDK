@@ -7,18 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LocalzCoreError.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 typedef enum {
-    ERROR,
-    DDEBUG,
-    WARN,
-    DATA,
-    INFO,
-    VERBOSE
+    LocalzDebugLevelError,
+    LocalzDebugLevelDebug,
+    LocalzDebugLevelWarning,
+    LocalzDebugLevelData,
+    LocalzDebugLevelInfo,
+    LocalzDebugLevelVerbose
 } LocalzDebugLevel;
-
 
 @interface LocalzDebugSDK : NSObject
 
