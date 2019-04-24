@@ -9,9 +9,7 @@
  * have access to this product or related documents.
  */
 
-@import UIKit;
-
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "LocalzCoreErrorType.h"
 #import "LocalzCoreProtocol.h"
 #import "LocalzCoreConstant.h"
