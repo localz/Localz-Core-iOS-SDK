@@ -16,28 +16,37 @@ typedef enum {
 } LocalzCoreDCRegion;
 
 extern NSString * const CORE_SDK_VERSION;
+
 extern NSString * const CORE_APPID_AU_REGION;
 extern NSString * const CORE_APPID_EU_REGION;
+extern NSString * const CORE_APPID_US_REGION;
 extern NSString * const CORE_API_AU_REGION_KEY;
 extern NSString * const CORE_API_EU_REGION_KEY;
+extern NSString * const CORE_API_US_REGION_KEY;
+
 extern NSString * const CORE_API_HOST_SUFFIX;
+
 extern NSString * const CORE_PROJECT_ID;
 extern NSString * const CORE_PROJECT_KEY;
 extern NSString * const CORE_DEVICE_ID;
-extern NSString * const CORE_TYPES;
+
 extern NSString * const CORE_ENV_ID;
 extern NSString * const CORE_ENV_URL;
-extern NSString * const CORE_ENV;
+extern NSString * const CORE_SPOTZ_ENV_HOST;
+extern NSString * const CORE_LOCALZ_ENV_HOST;
+
 extern NSString * const CORE_SDK_CURRENT_VERSION_KEY;
 extern NSString * const CORE_SSL_DOMAIN_SPKI_KEY;
 extern NSString * const CORE_SSL_PIN_ENABLE_KEY;
 extern NSString * const CORE_SSL_PIN_SUFFIX;
 extern NSString * const CORE_DEVICE_JWT_KEY;
 extern NSString * const CORE_DEVICE_JWT_REFRESH_KEY;
+
 extern NSString * const CORE_DEBUG_LOG;
 extern NSString * const CORE_DEBUG_URL;
 extern NSString * const CORE_DEBUG_PROJECT_KEY;
 extern NSString * const CORE_DEBUG_JWT_KEY;
+
 
 @interface LocalzCoreConfiguration : NSObject
 
@@ -137,11 +146,32 @@ extern NSString * const CORE_DEBUG_JWT_KEY;
 - (void) setDeviceId:(NSString *)deviceId;
 
 /**
- * Retrieve Host server
+ * Retrieve host spotz server
  *
- *  @return host server
+ *  @return host spotz server
  */
 - (NSString *) host;
+
+/**
+ * Retrieve the full spotz server url
+ *
+ *  @return spotz server url
+ */
+- (NSString *) spotzUrl;
+
+/**
+ * Retrieve the host localz server
+ *
+ *  @return host localz server
+ */
+- (NSString *) localzHost;
+
+/**
+ * Retrieve the full localz server url
+ *
+ *  @return localz server url
+ */
+- (NSString *) localzUrl;
 
 /**
  * Retrieve the URL of the SSL pinning certificate

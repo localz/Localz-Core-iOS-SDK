@@ -52,7 +52,7 @@
  *  @param jwtToken jwtToken provided by Localz
  *  @param refreshToken refreshToken provided by Localz to refresh JWT when expired
  */
-- (void) setJWT:(NSString *)jwtToken refreshToken:(NSString *)refreshToken;
+- (void) setJWT:(NSString *_Nullable)jwtToken refreshToken:(NSString *_Nullable)refreshToken;
 
 /**
  *  Associates the current device with a custom identity. Note that if the app is reinstalled, deviceId will need to be re-associated with the identity.

@@ -18,12 +18,12 @@ static double const CORE_HTTP_CONN_TIMEOUT = 15;
 
 @property (nonatomic,readonly) BOOL connectionOK;
 
-+ (LocalzCoreNetworking *) shared;
++ (LocalzCoreNetworking *_Nonnull) shared;
 
 /**
  *  Recreate the networking instance and set it up with a project id and key
  */
-- (LocalzCoreNetworking *) initWithProjectId:(NSString *)projectId projectKey:(NSString *)projectKey;
+- (LocalzCoreNetworking *_Nonnull) initWithProjectId:(NSString *_Nonnull)projectId projectKey:(NSString *_Nonnull)projectKey;
 
 /**
  *  Restart networking with newly set project id and key
@@ -33,10 +33,10 @@ static double const CORE_HTTP_CONN_TIMEOUT = 15;
 /**
  *  Download an SSL certificate and save it for pinning
  */
-- (void) setupSSLCertificatePinning:(void (^)(NSError * _Nullable))completion;
+- (void) setupSSLCertificatePinning:(void (^_Nullable)(NSError * _Nullable))completion;
 
 #pragma mark - device registration calls
-- (void) registerDeviceWithCompletion:(void(^)(NSError *error))completion;
+- (void) registerDeviceWithCompletion:(void(^_Nullable)(NSError *_Nullable error))completion;
 
 /**
  *  Map an identity ID and other information to the device. This information may be used by the Spotz's extensions.
@@ -44,21 +44,21 @@ static double const CORE_HTTP_CONN_TIMEOUT = 15;
  *  @param identityId identity ID (e.g. email, customerId, token)
  *  @param completion A block that is called upon completion which takes one argument: The error object which is set if unsuccesful, nil if no errors.
  */
-- (void) identity:(NSString *)identityId completion:(void(^)(NSError *error))completion;
+- (void) identity:(NSString *_Nonnull)identityId completion:(void(^_Nullable)(NSError *_Nullable error))completion;
 
 /**
  *  Remove identity link from the device
  *
  *  @param completion A block that is called upon completion which takes one ragument: The error object which is set if unsuccessful, nil if no errors.
  */
-- (void) removeIdentityWithCompletion:(void(^)(NSError *error))completion;
+- (void) removeIdentityWithCompletion:(void(^_Nullable)(NSError *_Nullable error))completion;
 
 
-- (NSError *) handleError:(NSError *)error statusCode:(NSInteger)statusCode shouldValidateAuth:(BOOL)shouldValidateAuth;
+- (NSError *_Nonnull) handleError:(NSError *_Nonnull)error statusCode:(NSInteger)statusCode shouldValidateAuth:(BOOL)shouldValidateAuth;
 
 /**
  *  Used to check the status of the user api and internet connection
  */
-- (void) healthCheckWithCompletion:(void(^_Nullable)(NSError *error))completion;
+- (void) healthCheckWithCompletion:(void(^_Nullable)(NSError *_Nullable error))completion;
 
 @end
