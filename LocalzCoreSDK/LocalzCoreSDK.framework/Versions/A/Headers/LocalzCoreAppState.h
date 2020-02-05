@@ -6,8 +6,8 @@
 //  Copyright © 2017 Localz Pty Ltd. All rights reserved.
 //
 
-@import UIKit;
 #import <Foundation/Foundation.h>
+#import <UIKit/UIApplication.h>
 
 @interface LocalzCoreAppState : NSObject
 
