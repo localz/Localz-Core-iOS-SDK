@@ -3,9 +3,9 @@ Pod::Spec.new do |s|
 	s.name = 'LocalzCoreSDK'
 	s.summary = 'LocalzCoreSDK'
 
-	s.version = '1.1.2-alpha'
-	s.platform = :ios,'8.0'
-	s.ios.deployment_target = '8.0'
+	s.version = '1.1.2'
+	s.platform = :ios,'9.0'
+	s.ios.deployment_target = '9.0'
 	
 	s.homepage = 'http://localz.com'
 	s.license = {
