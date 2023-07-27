@@ -41,6 +41,7 @@ extern NSString * const CORE_SSL_PIN_ENABLE_KEY;
 extern NSString * const CORE_SSL_PIN_SUFFIX;
 extern NSString * const CORE_DEVICE_JWT_KEY;
 extern NSString * const CORE_DEVICE_JWT_REFRESH_KEY;
+extern NSString * const CORE_SSO_ACCESS_TOKEN_KEY;
 
 extern NSString * const CORE_DEBUG_LOG;
 extern NSString * const CORE_DEBUG_URL;
@@ -59,6 +60,7 @@ extern NSString * const CORE_DEBUG_JWT_KEY;
 @property (nonatomic, strong) NSString *jwtToken;
 @property (nonatomic, strong) NSString *jwtRefreshToken;
 @property (nonatomic, strong) NSString *debugJWT;
+@property (nonatomic, strong) NSString *ssoAccessToken;
 
 /**
  *  Returns an instance of this class

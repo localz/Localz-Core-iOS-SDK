@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 	s.name = 'LocalzCoreSDK'
 	s.summary = 'LocalzCoreSDK'
 
-	s.version = '1.1.2'
+	s.version = '1.1.3'
 	s.platform = :ios,'9.0'
 	s.ios.deployment_target = '9.0'
 	
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
 	s.license = {
 		:type => 'Commercial',
 		:text => <<-LICENSE
-			Copyright 2019 Localz Pty Ltd.
+			Copyright 2023 Localz Pty Ltd.
 			LICENSE
 	}
 	s.author = { 'Localz Pty Ltd' => 'info@localz.com' }
